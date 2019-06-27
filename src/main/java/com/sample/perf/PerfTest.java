@@ -10,7 +10,7 @@ import java.util.concurrent.Executors;
 
 public class PerfTest {
 
-	static int threadCount = 1000;
+	static int threadCount = 4000;
 	static ExecutorService executorService = Executors.newFixedThreadPool(threadCount);
 
 	static String text = "";
@@ -26,9 +26,9 @@ public class PerfTest {
 		System.out.println("execution starts now..");
 		
 		for (int i = 0; i < threadCount; i++) {
-			executorService.execute(splitOperation());
+			//executorService.execute(splitOperation());
 			//executorService.execute(tokenizerOperation());
-			//executorService.execute(indexOfOperation());
+			executorService.execute(indexOfOperation());
 			
 		}
 
